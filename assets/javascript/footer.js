@@ -65,7 +65,7 @@ document.write(`
             </div>
             <div class="bottom list--reset">
                 <div class="logo">
-                    <a href="home.html">
+                    <a href="index.html">
                             <img src="assets/images/logo-white.png" alt="logo">
                     </a>
                 </div>

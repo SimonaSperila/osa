@@ -52,7 +52,7 @@ document.write(`
         <div class="container container--header">
             <div class="row">
                 <div class="logo col col-3">
-                    <a href="home.html">
+                    <a href="index.html">
                         <img src="assets/images/logo.png" alt="logo" />
                     </a>
                 </div>
