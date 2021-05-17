@@ -1,0 +1,103 @@
+document.write(`
+    <div id="header">
+        <div class="container container--header">
+            <div class="row">
+                <div class="logo col col-3">
+                    <a href="home.html">
+                        <img src="assets/images/logo.png" alt="logo" />
+                    </a>
+                </div>
+                <div class="header_right col col-9">
+                    <div class="phone">
+                        <a href="tel:0767813197">Need Urgent Assistance? 0767813197</a>
+                    </div>
+                    <div class="menu list--reset">
+                        <ul class="level1">
+                            <li class="has-children" data-destination=".about-us">
+                                <a href="/none">About Us</a>
+                                <ul class="level2">
+                                    <li>
+                                        <a href="/none">Our Story</a>
+                                    </li>
+                                    <li>
+                                        <a href="/none">Charities and Community</a>
+                                    </li>
+                                    <li>
+                                        <a href="/none">Diversity and Inclusion</a>
+                                    </li>
+                                    <li>
+                                        <a href="/none">Pro Bono</a>
+                                    </li>
+                                    <li>
+                                        <a href="/none">Responsible Business</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/none">Our People</a>
+                            </li>
+                            <li class="has-children">
+                                <a href="/none">Services</a>
+                            </li>
+                            <li class="has-children">
+                                <a href="/none">Insights</a>
+                            </li>
+                            <li>
+                                <a href="/none">Careers</a>
+                            </li>
+                            <li>
+                                <a href="/none">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        /* <div class="ddcontentholder contentholder-menu">
+            <div class="about-us inner ddcontent">
+                <div class="inside">
+                    <div class="inside2">
+                        <ul class="level2">
+                            <li>
+                                <a href="/none">Our Story</a>
+                            </li>
+                            <li>
+                                <a href="/none">Charities and Community</a>
+                            </li>
+                            <li>
+                                <a href="/none">Diversity and Inclusion</a>
+                            </li>
+                            <li>
+                                <a href="/none">Pro Bono</a>
+                            </li>
+                            <li>
+                                <a href="/none">Responsible Business</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> */
+    </div>
+`);
+
+
+$('.menu').on('click', 'li.has-children > a', function(e) {
+    e.preventDefault();
+    var $this = $(this),
+        $parent = $this.parent();
+    $parent.toggleClass('js--active').siblings().removeClass('js--active');
+    if ($parent.hasClass('js--active')) {
+        $('.contentholder-menu .inner').addClass('js--hidden').removeClass('js--visible');
+        $($parent.data('destination')).removeClass('js--hidden').addClass('js--visible');
+    } else {
+        $($parent.data('destination')).addClass('js--hidden').removeClass('js--visible');
+    }  
+    var height = $($parent.data('destination')).find('.level2').outerHeight();
+    console.log(height);
+    $('.contentholder-menu .inner').css('height', height);
+})
+
+
+var $position = $('.menu li').position();
+$('.menu li').data('destination').addClass('sss');
